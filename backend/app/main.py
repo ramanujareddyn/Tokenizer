@@ -22,6 +22,15 @@ app.include_router(health_router, prefix="/api/v1")
 app.include_router(tokenize_router, prefix="/api/v1")
 
 
+@app.get("/")
+async def root():
+    return {
+        "status": "online",
+        "service": "TOkenizer API",
+        "version": "1.0.0",
+    }
+
+
 if __name__ == "__main__":
     import uvicorn
 

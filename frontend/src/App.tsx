@@ -2,8 +2,7 @@ import { useMemo, useState } from 'react'
 import axios from 'axios'
 import './App.css'
 
-const API_BASE = 'http://localhost:8000/api/v1'
-
+const API_BASE = `${import.meta.env.VITE_API_URL}/api/v1`;
 function App() {
   const [text, setText] = useState('hello world hello alpha')
   const [mode, setMode] = useState<'tiktoken' | 'custom'>('tiktoken')
